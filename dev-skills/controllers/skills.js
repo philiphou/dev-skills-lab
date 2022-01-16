@@ -39,7 +39,7 @@ function create(req, res) {
     res.redirect('/skills');
 }
 
-function newSkills(req, res) {
+function newSkill(req, res) {
     res.render('skills/new');
 }
 
