@@ -2,7 +2,7 @@ const skills = [
     {id: 0, skill: 'HTML', Score: 80},
     {id: 1, skill: 'CSS', Score: 85},
     {id: 2, skill: 'JS', Score: 70}
-]
+];
 module.exports = { 
     getAll, 
     getOne, 

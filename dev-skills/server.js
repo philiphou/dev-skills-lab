@@ -23,12 +23,11 @@ app.use(methodOverride('_method'));
 
 app.use(function(req, res, next) {
   console.log('Hello WDI!');
-  req.time = new Date().toLocaleTimeString();
   next();
 });
 
 app.use('/', indexRouter);
-app.use('/todos', skillsRouter);
+app.use('/skills', skillsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
