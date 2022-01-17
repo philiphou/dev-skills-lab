@@ -11,11 +11,14 @@ a {
   display: inline-block;
   margin-right: 5px;
 }
-#edit-form button {
+#edit-form {
   color: green;
+  
  
 };
-
+#add-form button{
+  color: greenyellow
+}
 #delete-form button {
   color: red;
 }
