@@ -16,9 +16,9 @@ a {
   
  
 };
-#add-form button{
+#add-form{
   color: greenyellow
-}
+};
 #delete-form button {
   color: red;
 }
