@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel='stylesheet' href='/stylesheets/style.css' />
+  <title>Express To-Do</title>
+</head>
+<body>
+  <h1>Skills as of <%= time %></h1>
+  <ul>
+    <% skills.forEach(function(s) { %>
+      <li>
+        <form action="/todos/<%= s.id %>?_method=DELETE"
+          id="delete-form" method="POST">
+          <button type="submit">X</button>
+        </form>
+        <a href="/skills/<%= s.id %>"><%= s.skill%></a>
+          - 
+        <%= s.Score %>
+      </li>
+    <% }); %>
+  </ul>
+  <a href="/skills/new">Add Skills</a>
+</body>
+</html>

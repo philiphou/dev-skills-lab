@@ -1,4 +1,4 @@
-var skillDb = require('../models/skills-db');
+var Skill = require('../models/skill');
 
 module.exports = {
   index,
@@ -10,42 +10,45 @@ module.exports = {
   update
 };
 
-function index(req, res) {
-    res.render('skills/index', {
-        skills: skillDb.getAll(),
-    });
-};
+function update(req, res) {
+  req.body.done = req.body.done === 'on';
+ 
+  Skill.update(req.params.id, req.body);
+  res.redirect('/skills');
+}
 
-function show(req, res) {
-    res.render('skills/show', {
-      skill: skillDb.getOne(req.params.id),
-      skillNum: skillDb.getAll().findIndex(skill => skill.id === parseInt(req.params.id)) + 1
-    });
-  }
 function edit(req, res) {
-    res.render('skill/edit', {
-        skill: skillDb.getOne(req.params.id)
-    });
+  res.render("skills/edit", {
+    skill: Skill.getOne(req.params.id)
+  });
 }
 
 function deleteSkill(req, res) {
-    skillDb.deleteOne(req.params.id);
-    res.redirect('/skills');
+  Skill.deleteOne(req.params.id);
+  res.redirect('/skills');
 }
 
 function create(req, res) {
-    
-    skillDb.create(req.body);
-    res.redirect('/skills');
+  console.log(req.body);
+  req.body.Score = 50;
+  Skill.create(req.body);
+  res.redirect('/skills');
 }
 
 function newSkill(req, res) {
-    res.render('skills/new');
+  res.render('skills/new');
 }
 
-function update(req, res) {
-  req.body.done = req.body.done === 'on';
-  skillDb.update(req.params.id, req.body);
-  res.redirect('/skills/${req.params.id');
+function index(req, res) {
+  res.render('skills/index', {
+    skills: Skill.getAll(),
+    time: req.time
+  });
 }
 
+function show(req, res) {
+  res.render('skills/show', {
+    skill: Skill.getOne(req.params.id),
+    skillNum: Skill.getAll().findIndex(skill => skill.id === parseInt(req.params.id)) + 1
+  });
+}

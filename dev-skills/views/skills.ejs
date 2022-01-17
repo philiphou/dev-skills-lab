@@ -1,8 +1,0 @@
-<%- include('partials/header.ejs')  %> 
-
-    <h1>Developer Skills</h1>
-    <% skills.forEach(function(skill) { %>
-        <li><a href="/skills/<%= skill.id %>"><%= skill.skill %></a>: Score <%= skill.Score %> </li>
-    <% }) %>
-    
-<%- include('partials/footer.ejs')  %> 
