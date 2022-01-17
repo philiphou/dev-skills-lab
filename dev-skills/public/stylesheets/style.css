@@ -11,10 +11,11 @@ a {
   display: inline-block;
   margin-right: 5px;
 }
-#eidt-form button{
-  color:green
+#edit-form button {
+  color: green;
  
-}
+};
+
 #delete-form button {
   color: red;
 }
