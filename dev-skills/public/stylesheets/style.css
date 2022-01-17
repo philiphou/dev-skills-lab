@@ -14,10 +14,9 @@ a {
 #edit-form {
   color: green;
   
- 
 };
-#add-form{
-  color: greenyellow
+#add-form button {
+  color: greenyellow;
 };
 #delete-form button {
   color: red;
