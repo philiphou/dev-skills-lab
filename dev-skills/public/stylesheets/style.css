@@ -1,17 +1,20 @@
 body {
-  padding: 50px;
+  padding: 30px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
-  color: #00B7FF;
+  color: #001aff;
 }
 
 #delete-form {
   display: inline-block;
-  margin-right: 10px;
+  margin-right: 5px;
 }
-
+#eidt-form button{
+  color:green
+ 
+}
 #delete-form button {
   color: red;
 }
